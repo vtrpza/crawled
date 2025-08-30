@@ -42,20 +42,49 @@ A comprehensive AI-first web scraping solution that demonstrates advanced capabi
 
 ## 📦 Installation & Setup
 
+### 📊 Database Setup (Required)
+
+**Quick Setup with Docker (Recommended):**
+```bash
+# Run the automated setup script
+./setup_database.sh
+```
+
+This will:
+- Start PostgreSQL and Redis containers
+- Create the `crawl4ai` database and user
+- Initialize the database schema
+- Test the connection
+
+**Manual Setup:**
+```bash
+# Start database containers
+docker-compose -f docker-compose.dev.yml up -d
+
+# Or use Python setup script
+python -m database.setup
+
+# Check database status
+python -m database.migrate status
+```
+
 ### 🌐 Svelte Frontend (Recommended)
 
 ```bash
-# 1. Install Python dependencies
+# 1. Setup Database (see above)
+./setup_database.sh
+
+# 2. Install Python dependencies
 pip install -r requirements.txt
 pip install flask flask-cors
 
-# 2. Install Crawl4AI setup (first time only)
+# 3. Install Crawl4AI setup (first time only)
 crawl4ai-setup
 
-# 3. Install Node.js dependencies for Svelte frontend
+# 4. Install Node.js dependencies for Svelte frontend
 npm install
 
-# 4. Start the complete stack
+# 5. Start the complete stack
 npm run dev              # Svelte Frontend (Terminal 1) - http://localhost:3000
 python api_server.py     # Backend API (Terminal 2) - http://localhost:5000
 ```
@@ -65,13 +94,16 @@ python api_server.py     # Backend API (Terminal 2) - http://localhost:5000
 ### 🔧 CLI Only Setup
 
 ```bash
-# Install dependencies
+# 1. Setup Database (required for data persistence)
+./setup_database.sh
+
+# 2. Install dependencies
 pip install -r requirements.txt
 
-# Install Crawl4AI setup (first time only)
+# 3. Install Crawl4AI setup (first time only)
 crawl4ai-setup
 
-# Make the script executable
+# 4. Make the script executable
 chmod +x crawl4ai_poc.py
 ```
 
@@ -410,11 +442,16 @@ This is a **proof-of-concept** demonstration with the following limitations:
 
 ### Prerequisites
 - Python 3.8+
+- Docker and Docker Compose
+- PostgreSQL (via Docker)
 - Crawl4AI framework
 - Modern web browser (for dynamic content)
 
 ### Testing
 ```bash
+# Test database connection
+python -m database.migrate status
+
 # Test simple functionality
 python crawl4ai_poc.py simple https://httpbin.org/html
 
@@ -423,6 +460,52 @@ python crawl4ai_poc.py advanced https://httpbin.org/delay/2 --wait 3
 
 # Test extraction
 python crawl4ai_poc.py extract https://httpbin.org/html --query "Herman Melville"
+```
+
+## 🔧 Troubleshooting
+
+### Database Issues
+
+**Problem**: `database "crawl4ai" does not exist`
+**Solution**:
+```bash
+# Run the setup script
+./setup_database.sh
+
+# Or manually with Docker
+docker-compose -f docker-compose.dev.yml up -d
+```
+
+**Problem**: Database connection refused
+**Solution**:
+```bash
+# Check if containers are running
+docker-compose -f docker-compose.dev.yml ps
+
+# View database logs
+docker-compose -f docker-compose.dev.yml logs postgres
+
+# Restart containers
+docker-compose -f docker-compose.dev.yml restart
+```
+
+**Problem**: Tables don't exist
+**Solution**:
+```bash
+# Reset database schema
+python -m database.migrate reset
+
+# Or create tables only
+python -m database.migrate create
+```
+
+### Environment Variables
+Add these to your `.env` file if needed:
+```bash
+DATABASE_URL=postgresql://crawl4ai_user:crawl4ai_password@localhost:5432/crawl4ai
+REDIS_URL=redis://localhost:6379/0
+POSTGRES_ADMIN_USER=postgres
+POSTGRES_ADMIN_PASSWORD=postgres
 ```
 
 ## 📝 License

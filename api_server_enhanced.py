@@ -280,6 +280,22 @@ def crawl():
                 'error': 'URL is required'
             }), 400
         
+        # Configure AI provider for modes that need it
+        ai_extraction = data.get('ai_extraction', {})
+        if not ai_extraction:
+            ai_extraction = {'model': 'groq', 'enabled': True}
+        
+        # Map frontend model names to provider strings
+        model = ai_extraction.get('model', 'groq')
+        provider_map = {
+            'ollama': 'ollama/llama3.2',
+            'gpt-4': 'openai/gpt-4o',
+            'claude-3': 'anthropic/claude-3-5-sonnet',
+            'gemini-pro': 'gemini/gemini-1.5-pro',
+            'groq': 'groq/llama-3.3-70b-versatile'
+        }
+        provider = provider_map.get(model, 'groq/llama-3.3-70b-versatile')
+        
         # Create database record
         crawl_result = DatabaseService.create_crawl_result(
             url=url,
