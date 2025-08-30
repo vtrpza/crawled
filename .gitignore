@@ -1,0 +1,343 @@
+# ═══════════════════════════════════════════════════════
+# CRAWLED - AI-First Web Scraping Platform
+# Comprehensive .gitignore for Full-Stack Project
+# ═══════════════════════════════════════════════════════
+
+# ──────────── Environment & Secrets ────────────
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+config/secrets.json
+secrets/
+*.secrets
+api_keys.txt
+.api-keys
+credentials.json
+
+# ──────────── Node.js & Package Managers ────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+.npm
+.eslintcache
+.node_repl_history
+*.tsbuildinfo
+next-env.d.ts
+.next/
+.nuxt/
+.svelte-kit/
+.vite/
+
+# ──────────── Python & Virtual Environments ────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.virtualenv/
+.conda/
+.pyenv/
+
+# Python package management
+poetry.lock
+Pipfile.lock
+requirements-dev.txt
+
+# ──────────── Web Scraping & AI Specific ────────────
+# Crawler data and outputs
+crawled_data/
+scraped_content/
+downloads/
+media_cache/
+extracted_content/
+ai_outputs/
+batch_results/
+screenshots/
+page_sources/
+*.har
+*.warc
+*.mhtml
+
+# AI Models and Cache
+models/
+model_cache/
+.cache/
+.ai-cache/
+huggingface_cache/
+transformers_cache/
+ollama_cache/
+llm_cache/
+*.model
+*.bin
+*.safetensors
+
+# Browser and automation
+.playwright/
+playwright-report/
+test-results/
+browser_profiles/
+user_data_dir/
+chrome_data/
+firefox_data/
+session_storage/
+local_storage/
+
+# ──────────── Database & Storage ────────────
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.mdb
+*.accdb
+data/
+database/
+backups/
+dumps/
+migrations/local/
+*.dump
+*.sql.gz
+
+# ──────────── Logs & Monitoring ────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+crawler.log*
+api.log*
+errors.log*
+access.log*
+debug.log*
+trace.log*
+performance.log*
+monitoring/
+metrics/
+
+# ──────────── Build & Distribution ────────────
+dist/
+build/
+out/
+public/build/
+static/
+.output/
+.vercel/
+.netlify/
+.firebase/
+coverage/
+nyc_output/
+lib-cov
+*.lcov
+.nyc_output
+
+# ──────────── Development & Testing ────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+test_reports/
+.test-results/
+
+# ──────────── IDEs & Editors ────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.metadata
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+.history/
+.ionide/
+
+# ──────────── Operating System ────────────
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ──────────── Archives & Temporary Files ────────────
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.bz2
+*.xz
+*.tgz
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.rej
+*.patch
+*.diff
+*.swp
+*.swo
+*.pid
+*.seed
+*.pid.lock
+*.lock
+
+# ──────────── Docker & Containers ────────────
+.docker/
+docker-compose.override.yml
+.dockerignore
+Dockerfile.local
+*.dockerfile.local
+
+# ──────────── AI & ML Specific ────────────
+# Model files
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.pb
+*.pth
+*.pt
+*.ckpt
+*.weights
+*.onnx
+*.tflite
+*.mlmodel
+
+# Training data
+datasets/
+training_data/
+validation_data/
+test_data/
+annotations/
+labels/
+embeddings/
+vectors/
+checkpoints/
+tensorboard_logs/
+wandb/
+mlruns/
+
+# ──────────── Crawl4AI & Web Scraping Specific ────────────
+# Crawl4AI specific
+crawl4ai_cache/
+.crawl4ai/
+session_files/
+browser_cache/
+proxy_lists/
+user_agents/
+stealth_configs/
+extraction_cache/
+content_cache/
+
+# Batch processing
+batch_jobs/
+job_results/
+processing_queue/
+failed_jobs/
+retry_queue/
+
+# ──────────── Project Specific ────────────
+# Temporary development files
+TODO.md.local
+NOTES.md.local
+SCRATCH.md
+debug_output/
+test_files/
+sample_data/
+demo_results/
+performance_tests/
+load_tests/
+
+# Local configuration overrides
+config.local.json
+settings.local.json
+development.json
+local.config.js
