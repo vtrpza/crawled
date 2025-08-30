@@ -1,0 +1,1005 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* 🔥 FORÇAR FUNDO PRETO ABSOLUTO 🔥 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root, .min-h-screen {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Cyberpunk CRAWLED Theme - CSS Variables */
+:root {
+  /* Cyberpunk Core Colors */
+  --cyber-black: #0a0a0a;
+  --cyber-dark: #1a1a1a;
+  --cyber-gray: #2a2a2a;
+  --cyber-light-gray: #3a3a3a;
+  
+  /* Neon Colors */
+  --neon-cyan: #00ffff;
+  --neon-pink: #ff0080;
+  --neon-lime: #39ff14;
+  --electric-blue: #0080ff;
+  --matrix-green: #00ff41;
+  --laser-red: #ff073a;
+  --plasma-purple: #bf00ff;
+  --cyber-orange: #ff8c00;
+  
+  /* Typography */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+  --font-cyber: 'Orbitron', 'Share Tech Mono', monospace;
+  
+  /* Effects */
+  --glow-cyan: 0 0 20px var(--neon-cyan);
+  --glow-pink: 0 0 20px var(--neon-pink);
+  --glow-lime: 0 0 20px var(--neon-lime);
+  --shadow-cyber: 0 8px 32px rgba(0, 255, 255, 0.1);
+}
+
+@layer base {
+  html, body {
+    background: #000000 !important;
+    background-color: #000000 !important;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #root {
+    background: #000000 !important;
+    background-color: #000000 !important;
+    min-height: 100vh;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: 
+      /* FOGO PIXELADO VERDE NEON INTENSO */
+      radial-gradient(ellipse 80px 200px at 5% 100%, #39ff14 0%, #00ff41 20%, rgba(57,255,20,0.9) 40%, transparent 70%),
+      radial-gradient(ellipse 90px 250px at 10% 100%, #00ff41 0%, #39ff14 25%, rgba(0,255,65,1) 50%, transparent 75%),
+      radial-gradient(ellipse 70px 180px at 15% 100%, #39ff14 0%, #00ff88 20%, rgba(0,255,136,0.8) 40%, transparent 65%),
+      radial-gradient(ellipse 85px 220px at 20% 100%, #00ff41 0%, #39ff14 30%, rgba(57,255,20,1) 55%, transparent 80%),
+      radial-gradient(ellipse 95px 260px at 25% 100%, #39ff14 0%, #00ff41 35%, rgba(0,255,65,0.9) 60%, transparent 85%),
+      radial-gradient(ellipse 75px 190px at 30% 100%, #00ff88 0%, #39ff14 25%, rgba(57,255,20,0.8) 50%, transparent 70%),
+      radial-gradient(ellipse 80px 210px at 35% 100%, #00ff41 0%, #39ff14 20%, rgba(0,255,136,0.9) 45%, transparent 75%),
+      radial-gradient(ellipse 100px 280px at 40% 100%, #39ff14 0%, #00ff41 40%, rgba(57,255,20,1) 65%, transparent 90%),
+      radial-gradient(ellipse 88px 240px at 45% 100%, #00ff41 0%, #00ff88 35%, rgba(0,255,65,0.8) 60%, transparent 80%),
+      radial-gradient(ellipse 78px 200px at 50% 100%, #39ff14 0%, #00ff41 25%, rgba(0,255,136,1) 50%, transparent 75%),
+      radial-gradient(ellipse 85px 230px at 55% 100%, #00ff88 0%, #39ff14 30%, rgba(57,255,20,0.9) 55%, transparent 80%),
+      radial-gradient(ellipse 92px 250px at 60% 100%, #00ff41 0%, #39ff14 35%, rgba(0,255,65,1) 60%, transparent 85%),
+      radial-gradient(ellipse 75px 180px at 65% 100%, #39ff14 0%, #00ff88 20%, rgba(57,255,20,0.8) 45%, transparent 70%),
+      radial-gradient(ellipse 87px 220px at 70% 100%, #00ff41 0%, #39ff14 30%, rgba(0,255,136,0.9) 55%, transparent 80%),
+      radial-gradient(ellipse 82px 210px at 75% 100%, #39ff14 0%, #00ff41 25%, rgba(57,255,20,1) 50%, transparent 75%),
+      radial-gradient(ellipse 98px 270px at 80% 100%, #00ff88 0%, #39ff14 40%, rgba(0,255,65,0.9) 65%, transparent 90%),
+      radial-gradient(ellipse 83px 200px at 85% 100%, #00ff41 0%, #39ff14 25%, rgba(0,255,136,0.8) 50%, transparent 75%),
+      radial-gradient(ellipse 77px 190px at 90% 100%, #39ff14 0%, #00ff41 20%, rgba(57,255,20,0.9) 40%, transparent 65%),
+      radial-gradient(ellipse 89px 240px at 95% 100%, #00ff41 0%, #00ff88 30%, rgba(0,255,65,1) 55%, transparent 80%),
+      /* Texturas pixeladas intensas */
+      repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        rgba(57, 255, 20, 0.3) 1px,
+        transparent 2px,
+        rgba(0, 255, 65, 0.25) 3px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        rgba(0, 255, 136, 0.35) 1px,
+        transparent 2px,
+        rgba(57, 255, 20, 0.2) 3px,
+        transparent 4px
+      ),
+      /* Background verde escuro */
+      linear-gradient(to top, 
+        #003300 0%, 
+        #004400 15%, 
+        #002a00 30%, 
+        #001f00 45%, 
+        #001200 60%, 
+        #000800 75%, 
+        #000400 90%, 
+        #000000 100%
+      );
+    animation: pixelFire 1.67s ease-in-out infinite;
+    z-index: -2;
+    will-change: transform, filter;
+    transform: translateZ(0);
+    opacity: 0.8;
+  }
+  
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: 
+      /* Textura pixelada intensa */
+      repeating-conic-gradient(
+        from 0deg at 50% 100%,
+        transparent 0deg,
+        rgba(57, 255, 20, 0.15) 2deg,
+        transparent 4deg,
+        rgba(0, 255, 65, 0.12) 6deg,
+        transparent 8deg,
+        rgba(0, 255, 136, 0.18) 10deg,
+        transparent 12deg
+      ),
+      /* Ruído pixelado diagonal intenso */
+      repeating-linear-gradient(
+        45deg,
+        transparent 0px,
+        rgba(57, 255, 20, 0.25) 1px,
+        transparent 2px,
+        rgba(0, 255, 65, 0.20) 3px,
+        transparent 4px,
+        rgba(0, 255, 136, 0.15) 5px,
+        transparent 6px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent 0px,
+        rgba(0, 255, 65, 0.22) 1px,
+        transparent 2px,
+        rgba(57, 255, 20, 0.18) 3px,
+        transparent 4px,
+        rgba(0, 255, 136, 0.12) 5px,
+        transparent 6px
+      ),
+      /* Ruído base mais visível */
+      repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        rgba(57, 255, 20, 0.15) 1px,
+        transparent 3px,
+        rgba(0, 255, 65, 0.12) 4px,
+        transparent 6px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        rgba(0, 255, 136, 0.18) 1px,
+        transparent 3px,
+        rgba(57, 255, 20, 0.08) 4px,
+        transparent 6px
+      );
+    animation: pixelNoise 0.0167s steps(60) infinite;
+    z-index: -1;
+    pointer-events: none;
+    will-change: opacity, background-size;
+    transform: translateZ(0);
+    opacity: 0.6;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--neon-cyan) var(--cyber-gray);
+  }
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--cyber-gray);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--neon-cyan), var(--electric-blue));
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--neon-pink), var(--plasma-purple));
+  }
+
+  html {
+    font-family: var(--font-mono);
+  }
+  
+  body {
+    background: #000000 !important;
+    color: var(--neon-lime);
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
+}
+
+@layer components {
+  /* Cyberpunk Components */
+  .cyber-card {
+    background: rgba(26, 26, 26, 0.95);
+    border: 1px solid var(--neon-cyan);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-cyber), inset 0 1px 0 rgba(0, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+  
+  .cyber-card:hover {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 30px rgba(255, 0, 128, 0.2), inset 0 1px 0 rgba(255, 0, 128, 0.1);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+  
+  .cyber-btn-primary {
+    background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--electric-blue) 100%);
+    color: var(--cyber-black);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--neon-cyan);
+    box-shadow: var(--glow-cyan);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .cyber-btn-primary:hover {
+    background: linear-gradient(135deg, var(--neon-pink) 0%, var(--plasma-purple) 100%);
+    box-shadow: var(--glow-pink);
+    border-color: var(--neon-pink);
+    transform: translateY(-2px) scale(1.02);
+    transition: all 0.3s ease;
+  }
+  
+  .cyber-btn-secondary {
+    background: transparent;
+    color: var(--neon-cyan);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--neon-cyan);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .cyber-btn-secondary:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: var(--glow-cyan);
+    transform: translateY(-1px);
+    transition: all 0.3s ease;
+  }
+  
+  .cyber-input {
+    background: rgba(26, 26, 26, 0.9);
+    color: var(--neon-cyan);
+    border: 1px solid var(--cyber-gray);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-mono);
+    backdrop-filter: blur(5px);
+  }
+  
+  .cyber-input:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    box-shadow: var(--glow-cyan);
+    background: rgba(26, 26, 26, 0.95);
+  }
+  
+  .cyber-input::placeholder {
+    color: rgba(0, 255, 255, 0.5);
+  }
+  
+  .quick-action-cyber {
+    background: rgba(26, 26, 26, 0.95);
+    border: 1px solid var(--cyber-gray);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .quick-action-cyber:hover {
+    border-color: var(--neon-cyan);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--shadow-cyber);
+  }
+  
+  .terminal-text {
+    font-family: var(--font-mono);
+    color: var(--matrix-green);
+    text-shadow: 0 0 5px var(--matrix-green);
+  }
+  
+  .cyber-glow {
+    animation: cyber-pulse 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes cyber-pulse {
+    0% {
+      box-shadow: 0 0 5px var(--neon-cyan);
+    }
+    100% {
+      box-shadow: 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+    }
+  }
+  
+  .glitch-text {
+    position: relative;
+    color: var(--neon-cyan);
+    font-family: var(--font-cyber);
+  }
+  
+  .glitch-text:before,
+  .glitch-text:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+  }
+  
+  .glitch-text:before {
+    left: 2px;
+    text-shadow: -2px 0 var(--laser-red);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+  }
+  
+  .glitch-text:after {
+    left: -2px;
+    text-shadow: -2px 0 var(--electric-blue);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 1s infinite linear alternate-reverse;
+  }
+  
+  @keyframes glitch-anim {
+    0% {
+      clip: rect(10px, 9999px, 31px, 0);
+      transform: skew(0.85deg);
+    }
+    5% {
+      clip: rect(70px, 9999px, 71px, 0);
+      transform: skew(0.15deg);
+    }
+    10% {
+      clip: rect(30px, 9999px, 71px, 0);
+      transform: skew(0.55deg);
+    }
+    15% {
+      clip: rect(10px, 9999px, 105px, 0);
+      transform: skew(0.25deg);
+    }
+    20% {
+      clip: rect(40px, 9999px, 43px, 0);
+      transform: skew(0.35deg);
+    }
+    25% {
+      clip: rect(65px, 9999px, 156px, 0);
+      transform: skew(0.05deg);
+    }
+    30% {
+      clip: rect(60px, 9999px, 106px, 0);
+      transform: skew(0.15deg);
+    }
+    35% {
+      clip: rect(10px, 9999px, 71px, 0);
+      transform: skew(0.45deg);
+    }
+    40% {
+      clip: rect(80px, 9999px, 156px, 0);
+      transform: skew(0.35deg);
+    }
+    45% {
+      clip: rect(50px, 9999px, 26px, 0);
+      transform: skew(0.25deg);
+    }
+    50% {
+      clip: rect(10px, 9999px, 105px, 0);
+      transform: skew(0.05deg);
+    }
+    55% {
+      clip: rect(40px, 9999px, 71px, 0);
+      transform: skew(0.65deg);
+    }
+    60% {
+      clip: rect(80px, 9999px, 156px, 0);
+      transform: skew(0.45deg);
+    }
+    65% {
+      clip: rect(30px, 9999px, 156px, 0);
+      transform: skew(0.15deg);
+    }
+    70% {
+      clip: rect(50px, 9999px, 26px, 0);
+      transform: skew(0.25deg);
+    }
+    75% {
+      clip: rect(65px, 9999px, 156px, 0);
+      transform: skew(0.35deg);
+    }
+    80% {
+      clip: rect(40px, 9999px, 71px, 0);
+      transform: skew(0.05deg);
+    }
+    85% {
+      clip: rect(10px, 9999px, 105px, 0);
+      transform: skew(0.55deg);
+    }
+    90% {
+      clip: rect(80px, 9999px, 43px, 0);
+      transform: skew(0.25deg);
+    }
+    95% {
+      clip: rect(50px, 9999px, 156px, 0);
+      transform: skew(0.15deg);
+    }
+    100% {
+      clip: rect(10px, 9999px, 71px, 0);
+      transform: skew(0.05deg);
+    }
+  }
+  
+  @keyframes glitch-anim2 {
+    0% {
+      clip: rect(65px, 9999px, 100px, 0);
+      transform: skew(0.05deg);
+    }
+    5% {
+      clip: rect(25px, 9999px, 99px, 0);
+      transform: skew(0.25deg);
+    }
+    10% {
+      clip: rect(50px, 9999px, 102px, 0);
+      transform: skew(0.35deg);
+    }
+    15% {
+      clip: rect(25px, 9999px, 105px, 0);
+      transform: skew(0.45deg);
+    }
+    20% {
+      clip: rect(65px, 9999px, 156px, 0);
+      transform: skew(0.15deg);
+    }
+    25% {
+      clip: rect(85px, 9999px, 106px, 0);
+      transform: skew(0.65deg);
+    }
+    30% {
+      clip: rect(25px, 9999px, 71px, 0);
+      transform: skew(0.55deg);
+    }
+    35% {
+      clip: rect(15px, 9999px, 106px, 0);
+      transform: skew(0.05deg);
+    }
+    40% {
+      clip: rect(65px, 9999px, 71px, 0);
+      transform: skew(0.25deg);
+    }
+    45% {
+      clip: rect(40px, 9999px, 70px, 0);
+      transform: skew(0.35deg);
+    }
+    50% {
+      clip: rect(25px, 9999px, 106px, 0);
+      transform: skew(0.15deg);
+    }
+    55% {
+      clip: rect(85px, 9999px, 156px, 0);
+      transform: skew(0.45deg);
+    }
+    60% {
+      clip: rect(25px, 9999px, 102px, 0);
+      transform: skew(0.65deg);
+    }
+    65% {
+      clip: rect(15px, 9999px, 100px, 0);
+      transform: skew(0.55deg);
+    }
+    70% {
+      clip: rect(40px, 9999px, 71px, 0);
+      transform: skew(0.05deg);
+    }
+    75% {
+      clip: rect(65px, 9999px, 70px, 0);
+      transform: skew(0.25deg);
+    }
+    80% {
+      clip: rect(40px, 9999px, 106px, 0);
+      transform: skew(0.35deg);
+    }
+    85% {
+      clip: rect(25px, 9999px, 71px, 0);
+      transform: skew(0.15deg);
+    }
+    90% {
+      clip: rect(85px, 9999px, 99px, 0);
+      transform: skew(0.45deg);
+    }
+    95% {
+      clip: rect(15px, 9999px, 156px, 0);
+      transform: skew(0.65deg);
+    }
+    100% {
+      clip: rect(65px, 9999px, 100px, 0);
+      transform: skew(0.55deg);
+    }
+  }
+  
+  /* Legacy components for compatibility */
+  .card {
+    @apply cyber-card;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:border-primary-200 hover:-translate-y-1 hover:scale-[1.02];
+  }
+  
+  .enterprise-card {
+    @apply card shadow-enterprise border-purple-200/30 bg-gradient-to-br from-white via-purple-50/20 to-white;
+  }
+  
+  .adaptive-card {
+    @apply card shadow-adaptive border-emerald-200/30 bg-gradient-to-br from-white via-emerald-50/20 to-white;
+  }
+  
+  .discovery-card {
+    @apply card shadow-discovery border-indigo-200/30 bg-gradient-to-br from-white via-indigo-50/20 to-white;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transform;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-slate-100 to-slate-200 hover:from-slate-200 hover:to-slate-300 text-slate-700 font-semibold py-3 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2 transform;
+  }
+  
+  .btn-stealth {
+    @apply bg-gradient-to-r from-stealth-700 via-stealth-800 to-stealth-900 hover:from-stealth-800 hover:via-stealth-900 hover:to-stealth-950 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-stealth-500 focus:ring-offset-2 transform;
+  }
+  
+  .btn-enterprise {
+    @apply bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 hover:shadow-enterprise hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transform;
+  }
+  
+  .btn-adaptive {
+    @apply bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 hover:from-emerald-700 hover:via-emerald-800 hover:to-emerald-900 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 hover:shadow-adaptive hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transform;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-slate-300/60 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white/80 backdrop-blur-sm hover:bg-white focus:bg-white;
+  }
+  
+  .mode-card {
+    @apply card card-hover p-6 cursor-pointer relative overflow-hidden group;
+  }
+  
+  .mode-card.active {
+    @apply ring-2 ring-primary-500 border-primary-300 bg-gradient-to-br from-primary-50 via-white to-primary-50;
+  }
+  
+  .mode-card:hover {
+    @apply animate-float;
+  }
+  
+  .status-indicator {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+  
+  .status-success {
+    @apply status-indicator bg-gradient-to-r from-green-100 to-green-200 text-green-800 border border-green-200;
+  }
+  
+  .status-error {
+    @apply status-indicator bg-gradient-to-r from-red-100 to-red-200 text-red-800 border border-red-200;
+  }
+  
+  .status-processing {
+    @apply status-indicator bg-gradient-to-r from-blue-100 to-blue-200 text-blue-800 border border-blue-200 animate-pulse;
+  }
+  
+  .glow-effect {
+    @apply shadow-cyber-glow animate-cyber-pulse;
+  }
+  
+  .enterprise-gradient {
+    @apply bg-gradient-to-br from-neon-purple via-neon-pink to-cyber-dark;
+  }
+  
+  .adaptive-gradient {
+    @apply bg-gradient-to-br from-neon-lime via-neon-green to-cyber-dark;
+  }
+  
+  .discovery-gradient {
+    @apply bg-gradient-to-br from-neon-cyan via-neon-blue to-cyber-dark;
+  }
+}
+
+/* Custom scrollbar styles */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  
+  .scrollbar-thumb-slate-400::-webkit-scrollbar-thumb {
+    background-color: rgb(148 163 184);
+  }
+  
+  .scrollbar-track-slate-100::-webkit-scrollbar-track {
+    background-color: rgb(241 245 249);
+  }
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* 🔥 FOGO PIXELADO VERDE NEON PURO - 60FPS 🔥 */
+@keyframes pixelFire {
+  0% {
+    background-position: 0% 100%, 5% 100%, 10% 100%, 15% 100%, 20% 100%, 25% 100%, 30% 100%, 35% 100%, 40% 100%, 45% 100%, 50% 100%, 55% 100%, 60% 100%, 65% 100%, 70% 100%, 75% 100%, 80% 100%, 85% 100%, 90% 100%, 95% 100%;
+    filter: hue-rotate(120deg) brightness(1.4) contrast(1.8) saturate(2.2);
+    transform: translateY(0px) scaleY(1);
+  }
+  8.33% {
+    background-position: 1% 95%, 6% 96%, 11% 94%, 16% 97%, 21% 93%, 26% 98%, 31% 95%, 36% 92%, 41% 96%, 46% 94%, 51% 97%, 56% 93%, 61% 95%, 66% 96%, 71% 94%, 76% 92%, 81% 97%, 86% 95%, 91% 93%, 96% 96%;
+    filter: hue-rotate(125deg) brightness(1.5) contrast(1.9) saturate(2.3);
+    transform: translateY(-2px) scaleY(1.05);
+  }
+  16.66% {
+    background-position: 2% 90%, 7% 92%, 12% 88%, 17% 94%, 22% 89%, 27% 96%, 32% 91%, 37% 87%, 42% 93%, 47% 90%, 52% 95%, 57% 88%, 62% 92%, 67% 94%, 72% 89%, 77% 87%, 82% 96%, 87% 91%, 92% 88%, 97% 93%;
+    filter: hue-rotate(130deg) brightness(1.6) contrast(2.0) saturate(2.4);
+    transform: translateY(-5px) scaleY(1.1);
+  }
+  25% {
+    background-position: 3% 85%, 8% 88%, 13% 82%, 18% 91%, 23% 84%, 28% 94%, 33% 87%, 38% 81%, 43% 90%, 48% 85%, 53% 93%, 58% 83%, 63% 89%, 68% 92%, 73% 84%, 78% 80%, 83% 95%, 88% 87%, 93% 82%, 98% 90%;
+    filter: hue-rotate(135deg) brightness(1.7) contrast(2.1) saturate(2.5);
+    transform: translateY(-8px) scaleY(1.15);
+  }
+  33.33% {
+    background-position: 4% 80%, 9% 84%, 14% 76%, 19% 88%, 24% 78%, 29% 92%, 34% 83%, 39% 75%, 44% 87%, 49% 80%, 54% 91%, 59% 77%, 64% 86%, 69% 90%, 74% 79%, 79% 74%, 84% 94%, 89% 83%, 94% 76%, 99% 88%;
+    filter: hue-rotate(140deg) brightness(1.8) contrast(2.2) saturate(2.6);
+    transform: translateY(-12px) scaleY(1.2);
+  }
+  41.66% {
+    background-position: 5% 75%, 10% 80%, 15% 70%, 20% 85%, 25% 72%, 30% 90%, 35% 79%, 40% 68%, 45% 84%, 50% 75%, 55% 89%, 60% 71%, 65% 83%, 70% 88%, 75% 74%, 80% 67%, 85% 93%, 90% 79%, 95% 70%, 100% 85%;
+    filter: hue-rotate(145deg) brightness(1.9) contrast(2.3) saturate(2.7);
+    transform: translateY(-16px) scaleY(1.25);
+  }
+  50% {
+    background-position: 6% 70%, 11% 76%, 16% 64%, 21% 82%, 26% 66%, 31% 88%, 36% 75%, 41% 62%, 46% 81%, 51% 70%, 56% 87%, 61% 65%, 66% 80%, 71% 86%, 76% 69%, 81% 61%, 86% 92%, 91% 75%, 96% 64%, 101% 82%;
+    filter: hue-rotate(150deg) brightness(2.0) contrast(2.4) saturate(2.8);
+    transform: translateY(-20px) scaleY(1.3);
+  }
+  58.33% {
+    background-position: 7% 65%, 12% 72%, 17% 58%, 22% 79%, 27% 60%, 32% 86%, 37% 71%, 42% 56%, 47% 78%, 52% 65%, 57% 85%, 62% 59%, 67% 77%, 72% 84%, 77% 64%, 82% 55%, 87% 91%, 92% 71%, 97% 58%, 102% 79%;
+    filter: hue-rotate(145deg) brightness(1.9) contrast(2.3) saturate(2.7);
+    transform: translateY(-16px) scaleY(1.25);
+  }
+  66.66% {
+    background-position: 8% 60%, 13% 68%, 18% 52%, 23% 76%, 28% 54%, 33% 84%, 38% 67%, 43% 50%, 48% 75%, 53% 60%, 58% 83%, 63% 53%, 68% 74%, 73% 82%, 78% 59%, 83% 49%, 88% 90%, 93% 67%, 98% 52%, 103% 76%;
+    filter: hue-rotate(140deg) brightness(1.8) contrast(2.2) saturate(2.6);
+    transform: translateY(-12px) scaleY(1.2);
+  }
+  75% {
+    background-position: 9% 55%, 14% 64%, 19% 46%, 24% 73%, 29% 48%, 34% 82%, 39% 63%, 44% 44%, 49% 72%, 54% 55%, 59% 81%, 64% 47%, 69% 71%, 74% 80%, 79% 54%, 84% 43%, 89% 89%, 94% 63%, 99% 46%, 104% 73%;
+    filter: hue-rotate(135deg) brightness(1.7) contrast(2.1) saturate(2.5);
+    transform: translateY(-8px) scaleY(1.15);
+  }
+  83.33% {
+    background-position: 10% 50%, 15% 60%, 20% 40%, 25% 70%, 30% 42%, 35% 80%, 40% 59%, 45% 38%, 50% 69%, 55% 50%, 60% 79%, 65% 41%, 70% 68%, 75% 78%, 80% 49%, 85% 37%, 90% 88%, 95% 59%, 100% 40%, 105% 70%;
+    filter: hue-rotate(130deg) brightness(1.6) contrast(2.0) saturate(2.4);
+    transform: translateY(-5px) scaleY(1.1);
+  }
+  91.66% {
+    background-position: 11% 45%, 16% 56%, 21% 34%, 26% 67%, 31% 36%, 36% 78%, 41% 55%, 46% 32%, 51% 66%, 56% 45%, 61% 77%, 66% 35%, 71% 65%, 76% 76%, 81% 44%, 86% 31%, 91% 87%, 96% 55%, 101% 34%, 106% 67%;
+    filter: hue-rotate(125deg) brightness(1.5) contrast(1.9) saturate(2.3);
+    transform: translateY(-2px) scaleY(1.05);
+  }
+  100% {
+    background-position: 0% 100%, 5% 100%, 10% 100%, 15% 100%, 20% 100%, 25% 100%, 30% 100%, 35% 100%, 40% 100%, 45% 100%, 50% 100%, 55% 100%, 60% 100%, 65% 100%, 70% 100%, 75% 100%, 80% 100%, 85% 100%, 90% 100%, 95% 100%;
+    filter: hue-rotate(120deg) brightness(1.4) contrast(1.8) saturate(2.2);
+    transform: translateY(0px) scaleY(1);
+  }
+}
+
+@keyframes pixelNoise {
+  0% { 
+    opacity: 0.9; 
+    background-size: 2px 2px, 3px 3px, 4px 4px, 1px 1px, 2px 2px;
+    transform: rotate(0deg) scale(1);
+  }
+  1.67% { 
+    opacity: 0.7; 
+    background-size: 1px 1px, 2px 2px, 3px 3px, 2px 2px, 1px 1px;
+    transform: rotate(0.5deg) scale(1.01);
+  }
+  3.33% { 
+    opacity: 1; 
+    background-size: 3px 3px, 4px 4px, 2px 2px, 1px 1px, 3px 3px;
+    transform: rotate(-0.3deg) scale(0.99);
+  }
+  5% { 
+    opacity: 0.8; 
+    background-size: 2px 2px, 1px 1px, 4px 4px, 3px 3px, 2px 2px;
+    transform: rotate(0.7deg) scale(1.02);
+  }
+  6.67% { 
+    opacity: 0.6; 
+    background-size: 4px 4px, 3px 3px, 1px 1px, 2px 2px, 4px 4px;
+    transform: rotate(-0.2deg) scale(0.98);
+  }
+  8.33% { 
+    opacity: 0.9; 
+    background-size: 1px 1px, 4px 4px, 3px 3px, 1px 1px, 2px 2px;
+    transform: rotate(0.4deg) scale(1.01);
+  }
+  10% { 
+    opacity: 0.75; 
+    background-size: 3px 3px, 2px 2px, 1px 1px, 4px 4px, 3px 3px;
+    transform: rotate(-0.6deg) scale(1);
+  }
+  15% { 
+    opacity: 0.85; 
+    background-size: 2px 2px, 3px 3px, 4px 4px, 2px 2px, 1px 1px;
+    transform: rotate(0.3deg) scale(0.99);
+  }
+  20% { 
+    opacity: 0.95; 
+    background-size: 4px 4px, 1px 1px, 2px 2px, 3px 3px, 4px 4px;
+    transform: rotate(-0.8deg) scale(1.02);
+  }
+  25% { 
+    opacity: 0.7; 
+    background-size: 1px 1px, 2px 2px, 3px 3px, 4px 4px, 1px 1px;
+    transform: rotate(0.5deg) scale(0.98);
+  }
+  30% { 
+    opacity: 0.8; 
+    background-size: 3px 3px, 4px 4px, 1px 1px, 2px 2px, 3px 3px;
+    transform: rotate(-0.4deg) scale(1.01);
+  }
+  35% { 
+    opacity: 0.9; 
+    background-size: 2px 2px, 1px 1px, 4px 4px, 1px 1px, 2px 2px;
+    transform: rotate(0.7deg) scale(1);
+  }
+  40% { 
+    opacity: 0.65; 
+    background-size: 4px 4px, 3px 3px, 2px 2px, 4px 4px, 3px 3px;
+    transform: rotate(-0.3deg) scale(0.99);
+  }
+  45% { 
+    opacity: 0.85; 
+    background-size: 1px 1px, 4px 4px, 3px 3px, 2px 2px, 1px 1px;
+    transform: rotate(0.6deg) scale(1.02);
+  }
+  50% { 
+    opacity: 0.95; 
+    background-size: 3px 3px, 2px 2px, 4px 4px, 1px 1px, 3px 3px;
+    transform: rotate(-0.5deg) scale(0.98);
+  }
+  55% { 
+    opacity: 0.75; 
+    background-size: 2px 2px, 3px 3px, 1px 1px, 3px 3px, 2px 2px;
+    transform: rotate(0.4deg) scale(1.01);
+  }
+  60% { 
+    opacity: 0.85; 
+    background-size: 4px 4px, 1px 1px, 3px 3px, 2px 2px, 4px 4px;
+    transform: rotate(-0.7deg) scale(1);
+  }
+  65% { 
+    opacity: 0.9; 
+    background-size: 1px 1px, 3px 3px, 2px 2px, 4px 4px, 1px 1px;
+    transform: rotate(0.3deg) scale(0.99);
+  }
+  70% { 
+    opacity: 0.7; 
+    background-size: 3px 3px, 4px 4px, 1px 1px, 3px 3px, 2px 2px;
+    transform: rotate(-0.6deg) scale(1.02);
+  }
+  75% { 
+    opacity: 0.8; 
+    background-size: 2px 2px, 1px 1px, 4px 4px, 2px 2px, 3px 3px;
+    transform: rotate(0.5deg) scale(0.98);
+  }
+  80% { 
+    opacity: 1; 
+    background-size: 4px 4px, 2px 2px, 3px 3px, 1px 1px, 4px 4px;
+    transform: rotate(-0.4deg) scale(1.01);
+  }
+  85% { 
+    opacity: 0.75; 
+    background-size: 1px 1px, 4px 4px, 2px 2px, 3px 3px, 1px 1px;
+    transform: rotate(0.8deg) scale(1);
+  }
+  90% { 
+    opacity: 0.85; 
+    background-size: 3px 3px, 1px 1px, 4px 4px, 2px 2px, 3px 3px;
+    transform: rotate(-0.2deg) scale(0.99);
+  }
+  95% { 
+    opacity: 0.95; 
+    background-size: 2px 2px, 3px 3px, 1px 1px, 4px 4px, 2px 2px;
+    transform: rotate(0.6deg) scale(1.01);
+  }
+  100% { 
+    opacity: 0.9; 
+    background-size: 4px 4px, 2px 2px, 3px 3px, 1px 1px, 4px 4px;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* Efeito de brilho neon para componentes */
+@keyframes fireGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+    box-shadow: 
+      0 0 20px #39ff14,
+      0 0 40px #00ff41,
+      0 0 60px #39ff14,
+      inset 0 0 20px rgba(57, 255, 20, 0.1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.02);
+    box-shadow: 
+      0 0 30px #39ff14,
+      0 0 60px #00ff41,
+      0 0 90px #39ff14,
+      inset 0 0 30px rgba(57, 255, 20, 0.2);
+  }
+}
+
+/* Partículas flutuantes de fogo */
+@keyframes floatingEmbers {
+  0% {
+    transform: translateY(100vh) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Classe utilitária para aplicar o efeito de fogo */
+.neon-fire-bg {
+  position: relative;
+  z-index: 1;
+}
+
+.neon-fire-bg::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  background: linear-gradient(45deg, 
+    rgba(57, 255, 20, 0.3) 0%, 
+    rgba(0, 255, 65, 0.4) 25%, 
+    rgba(57, 255, 20, 0.3) 50%, 
+    rgba(0, 255, 136, 0.2) 75%, 
+    rgba(57, 255, 20, 0.3) 100%
+  );
+  border-radius: inherit;
+  z-index: -1;
+  filter: blur(15px);
+  animation: fireGlow 4s ease-in-out infinite;
+}
+
+/* Efeito de scan lines cyberpunk */
+.cyber-scanlines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 2px,
+    rgba(57, 255, 20, 0.03) 2px,
+    rgba(57, 255, 20, 0.03) 4px
+  );
+  pointer-events: none;
+  animation: scanlines 2s linear infinite;
+}
+
+@keyframes scanlines {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* 🎭 EFEITO MATRIZ DIGITAL CYBERPUNK 🎭 */
+.matrix-rain::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(57, 255, 20, 0.02) 10%,
+      rgba(0, 255, 65, 0.01) 50%,
+      transparent 100%
+    );
+  z-index: -3;
+  pointer-events: none;
+}
+
+/* Efeito de texto digital caindo */
+@keyframes matrixDrop {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Intensificar o brilho do fogo em hover */
+.neon-fire-bg:hover::before {
+  filter: blur(12px) brightness(1.5);
+  animation: fireGlow 2s ease-in-out infinite;
+}
+
+/* Efeito de pulsação para elementos ativos */
+.cyber-pulse-active {
+  animation: cyberPulseStrong 1.5s ease-in-out infinite;
+}
+
+@keyframes cyberPulseStrong {
+  0%, 100% {
+    box-shadow: 
+      0 0 10px #39ff14,
+      0 0 20px #00ff41,
+      0 0 40px #39ff14,
+      inset 0 0 10px rgba(57, 255, 20, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 
+      0 0 20px #39ff14,
+      0 0 40px #00ff41,
+      0 0 80px #39ff14,
+      inset 0 0 20px rgba(57, 255, 20, 0.3);
+    transform: scale(1.01);
+  }
+}

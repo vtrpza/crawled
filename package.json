@@ -1,0 +1,26 @@
+{
+  "name": "crawl4ai-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Enhanced Crawl4AI platform with Docker, PostgreSQL, and advanced UI",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --host"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "lucide-svelte": "^0.400.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^4.0.4",
+    "@tailwindcss/forms": "^0.5.10",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.40",
+    "svelte": "^5.38.6",
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.4.0"
+  }
+}
